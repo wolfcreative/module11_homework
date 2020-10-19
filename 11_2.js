@@ -5,7 +5,7 @@ function checkArray(array){
   let odd = 0;
   let zero = 0;
 
-  for (let i = 1; i <= array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     if (typeof arr[i] == 'number' && !isNaN(arr[i])){
       if (arr[i] === 0) {
         zero++;
@@ -23,3 +23,5 @@ function checkArray(array){
 }
 
 checkArray(arr);
+
+// Почти верно, но обход массива содержит ошибку - вы начинаете с элементом под индексом 1, который по факту является вторым элементом массива, т.к. в массивах нумерация индексов начинается с 0. Из-за этого первый элемент массива не обрабатывается и не учитывается при подсчёте.
